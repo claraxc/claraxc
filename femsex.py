@@ -1,6 +1,6 @@
 from random import randint
 
-r = 1000000    # antalet omgångar som ska spelas
+r = 10000000    # antalet omgångar som ska spelas
 
 wins = 0
 losses = 0

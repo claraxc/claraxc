@@ -1,7 +1,7 @@
 from random import randint
 
 def slutspel(savedsum, dice4, dice5):
-    r = 10000000                 # antalet gånger simulationen ska köras
+    r = 1000000                 # antalet gånger simulationen ska köras
     savedsum += dice4       # de sparade tärningarnas summa med 4e tärningen
 
     wins = 0
@@ -18,7 +18,7 @@ def slutspel(savedsum, dice4, dice5):
             losses += 1
             #print("losses:", losses, "\n")
 
-    savewinrate = wins / r * 100            # sannolikheten att vinna om man sparar 5e tärningen
+    savewinrate = round(wins / r * 100, 2)            # sannolikheten att vinna om man sparar 5e tärningen
     savelossrate = losses / r * 100         # sannolikheten att förlora
 
     # om man slår om 5:e tärningen
@@ -54,15 +54,15 @@ def slutspel(savedsum, dice4, dice5):
                 losses += 1
                 #print("losses:", losses, "\n")
 
-    hitwinrate = wins / r * 100             # sannolikheten att vinna om man slår om 5e och 6e tärningen
+    hitwinrate = round(wins / r * 100, 2)             # sannolikheten att vinna om man slår om 5e och 6e tärningen
     hitlossrate = losses / r * 100          # sannolikheten att förlora
 
     # statistik för om man sparar 5e tärningen
-    #print("\nSavewinrate: {:.2f}%".format(savewinrate))
+    print("\nSavewinrate: {}%".format(savewinrate))
     #print("Savelossrate: {:.2f}%".format(savelossrate))
 
     # statistik för om man slår om 5e och 6e tärningen
-    #print("\nHitwinrate: {:.2f}%".format(hitwinrate))
+    print("\nHitwinrate: {}%".format(hitwinrate))
     #print("Hitlossrate: {:.2f}%\n".format(hitlossrate))
 
     if savewinrate > hitwinrate:        # om man har störst chans att vinna genom att spara
@@ -74,3 +74,5 @@ def slutspel(savedsum, dice4, dice5):
     else:                               # om sannolikheten är lika stor
         #print("Action: -\n")
         return "save"
+
+slutspel(18, 2, 5)

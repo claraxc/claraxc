@@ -1,7 +1,7 @@
 from random import randint
 
 r = 1000000             # antalet gånger simulationen ska köras
-savedsum = 20           # de sparade tärningarnas summa med 4e tärningen
+savedsum = 24           # de sparade tärningarnas summa med 4e tärningen
 dice5 = 5               # den 5:e tärningens värde som man kan välja att spara eller ej
 
 print(r, savedsum, dice5)
